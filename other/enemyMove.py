@@ -1,6 +1,7 @@
 import math
 
-from pathFinder import PathFinder, Point
+from astar.pathFinder import PathFinder, Point
+
 
 # todo monster will move trembly
 class EnemyMove(object):
@@ -55,7 +56,7 @@ class EnemyMove(object):
 
         min_distance = 100
         min_loc = -1
-        for i in xrange(len(distances)):
+        for i in range(len(distances)):
             if distances[i] < min_distance:
                 min_distance = distances[i]
                 min_loc = i

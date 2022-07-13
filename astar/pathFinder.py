@@ -178,4 +178,4 @@ if __name__ == '__main__':
     path = path_finder.find_path(start_point, end_point)
 
     for p in path:
-        print (p.X, p.Z)
+        print(p.X, p.Z)
