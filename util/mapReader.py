@@ -9,7 +9,8 @@ class MapReader(object):
         self.height = 0
         self.wide = 0
         dir_path = os.path.dirname(__file__)
-        self.file_path = os.path.join(dir_path, 'navmesh_matrix.txt')
+        dir_path = os.path.dirname(dir_path)
+        self.file_path = os.path.join(dir_path, 'resource\\navmesh_matrix.txt')
         self.map_file = open(self.file_path, 'r')
         self.astar_map = []
         self.game_map = []
@@ -20,7 +21,7 @@ class MapReader(object):
 
     def init_map(self):
         self.astar_map = []
-        for i in xrange(self.MAX_LENGTH):
+        for i in range(self.MAX_LENGTH):
             self.astar_map.append([])
             self.game_map.append(100 * [0])
 
@@ -55,8 +56,8 @@ class MapReader(object):
         self.set_game_map()
 
     def set_game_map(self):
-        for i in xrange(self.wide):
-            for j in xrange(self.height):
+        for i in range(self.wide):
+            for j in range(self.height):
                 self.game_map[i][j] = int(self.astar_map[j][i])
 
 
